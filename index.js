@@ -15,7 +15,7 @@ var childArgs = [
     '-host', '127.0.0.1' ,'-port', '8787'
 ]
 
-childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+var childProcess = childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
     if(err){
         throw err;
     }
@@ -26,7 +26,9 @@ var defaultExecuted = function(chart) {chart.renderer.arc( 100, 100).attr({fill 
 
 
 
-
+process.on('exit' , function() {
+    childProcess.kill();
+})
 
 
 

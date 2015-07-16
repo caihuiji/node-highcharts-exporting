@@ -1,7 +1,5 @@
 var exporting = require("../index");
 var fs = require('fs');
-var crypto = require('crypto');
-
 
 
 exporting({
@@ -19,6 +17,7 @@ exporting({
 } , function (data){
     fs.writeFile('chart.png', new Buffer(data, 'base64'), function() {
         console.log('Written to chart.png');
+        process.exit();
     });
 })
 
