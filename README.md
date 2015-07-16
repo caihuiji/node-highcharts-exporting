@@ -29,7 +29,7 @@ exporting({
 ```
 
 ##how it work
-The api is used so:
+The API is used:
 > exporting(options , callback)
 
 **options**
