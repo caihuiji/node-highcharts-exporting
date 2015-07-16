@@ -6,7 +6,7 @@ Easy to use [exporting-server](https://github.com/highslide-software/highcharts.
 
 ##Usage
 ``` javascript
-var exporting = require("../index");
+var exporting = require("node-highcharts-exporting");
 var fs = require('fs');
 
 exporting({
