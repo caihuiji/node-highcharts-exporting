@@ -1,9 +1,10 @@
 # node-highcharts-exporting
------
 Easy to use [exporting-server](https://github.com/highslide-software/highcharts.com/tree/master/exporting-server/phantomjs) by [HighCharts](http://www.highcharts.com/component/content/article/2-news/52-serverside-generated-charts)
 
+##Install
+> $ npm install node-highcharts-exporting
+
 ##Usage
-----
 ``` javascript
 var exporting = require("../index");
 var fs = require('fs');
@@ -28,7 +29,6 @@ exporting({
 ```
 
 ##how it work
-----
 The api is used so:
 > exporting(options , callback)
 
