@@ -35,9 +35,9 @@ var defaultExecuted = function(chart) {chart.renderer.arc( 100, 100).attr({fill 
  *   data       - Highcharts configuration object.
  *   scale      - A scaling factor for a higher image resolution. Maximum scaling is set to 4x. Remember that the width parameter has a higher precedence over scaling. default is 1
  *   width      - The exact pixel width of the exported image. Defaults to chart.width or 600px. Maximum width is 2000px.
- *   type       - Image format , The type can be of jpg, png, pfd or svg for , default is png.
- *   constr     -  Can be one of Chart or StockChart. This depends on whether you want to generate Highstock or basic Highcharts
- *   executed   - The executed is a function which will be called in the constructor of Highcharts to be executed , the chart pass into the function
+ *   type       - Image format , the type can be of jpg, png, pfd or svg for , default is png.
+ *   constr     - Can be one of Chart or StockChart. This depends on whether you want to generate Highstock or basic Highcharts
+ *   executed   - The executed is a function which will be called in the constructor of Highcharts to be executed , the highchart object should  as parameter pass into the function and named chart
  *
  *
  * callback
