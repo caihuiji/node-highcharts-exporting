@@ -1,1 +1,2 @@
-# BJ_REPORT
+# node-hightcharts-exporting
+easy to use
