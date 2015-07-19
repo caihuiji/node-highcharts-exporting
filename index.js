@@ -22,8 +22,7 @@ var childProcess = childProcess.execFile(binPath, childArgs, function(err, stdou
     console.log(stdout)
 });
 
-var defaultExecuted = function(chart) {chart.renderer.arc( 100, 100).attr({fill : '#FCFFC5',stroke : 'black','stroke-width' : 1}).add();}
-
+var defaultExecuted = function(chart) {  chart.renderer.arc(0).add();}
 
 
 process.on('exit' , function() {
@@ -40,7 +39,7 @@ process.on('exit' , function() {
  *   type       - Image format , the type can be of jpg, png, pfd or svg for , default is png.
  *   constr     - Can be one of Chart or StockChart. This depends on whether you want to generate Highstock or basic Highcharts
  *   executed   - The executed is a function which will be called in the constructor of Highcharts to be executed , the highchart object should  as parameter pass into the function and named chart
- *
+ *   options    - The options is init for Highcharts , see Highcharts.setOptions
  *
  * callback
  *          - when file generated and will be called
@@ -55,6 +54,12 @@ module.exports = function (obj , callback){
         obj.executed = defaultExecuted.toString();
     }
 
+    var globaloptions = {};
+
+    if(obj.options){
+        globaloptions = obj.options;
+    }
+
 
     var postData = JSON.stringify(
         {
@@ -63,13 +68,14 @@ module.exports = function (obj , callback){
             "constr": obj.constr || "Chart" ,
             "width" : obj.width || 600,
             "type"  : obj.type || "png",
-            "scale" : obj.scale || "1"
+            "scale" : obj.scale || "1",
+            "globaloptions" :  JSON.stringify(globaloptions)
         }
     );
 
     var post = http.request({
         hostname: '127.0.0.1',
-        port: 8787,
+        port: 8888,
         path: '/',
         method: 'POST',
         headers: {
@@ -84,7 +90,7 @@ module.exports = function (obj , callback){
         })
 
         res.on('end' , function (){
-            if(data.indexOf("ERROR") >=0){
+            if(data.indexOf("Error") >=0){
                 callback(new Error(data));
             }else {
                 callback(null , data);
