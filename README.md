@@ -21,7 +21,7 @@ exporting({
         }]
     }
 
-} , function (data){
+} , function (err , data){
     // data had encode base64 , should be decode
     fs.writeFile('chart.png', new Buffer(data, 'base64'), function() {
             console.log('Written to chart.png');

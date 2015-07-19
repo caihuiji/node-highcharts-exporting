@@ -14,11 +14,12 @@ exporting({
         }]
     }
 
-} , function (data){
+} , function (err  , data){
     fs.writeFile('chart.png', new Buffer(data, 'base64'), function() {
         console.log('Written to chart.png');
         process.exit();
     });
+
 })
 
 

@@ -87,7 +87,7 @@ module.exports = function (obj , callback){
             if(data.indexOf("ERROR") >=0){
                 callback(new Error(data));
             }else {
-                callback(data);
+                callback(null , data);
             }
 
         })
