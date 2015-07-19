@@ -14,7 +14,7 @@ exporting({
 
     options : {
         title : {text : "test"} ,
-        "yAxis" : {"title" : {"text": "最近" }}
+        "yAxis" : {"title" : {"text": "test" }}
     }
 
 
