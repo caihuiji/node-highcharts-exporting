@@ -1,11 +1,16 @@
 {
   "name": "node-highcharts-exporting",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "easy to use  highcharts exporting by phantomjs",
   "main": "index.js",
   "dependencies": {
     "phantomjs": "^1.9.17"
   },
+  "homepage": "https://github.com/caihuiji/node-highcharts-exporting",
+  "repository": {
+    "url": "https://github.com/caihuiji/node-highcharts-exporting.git"
+  },
+  "bugs": "https://github.com/caihuiji/node-highcharts-exporting/issues",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
