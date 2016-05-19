@@ -61,7 +61,7 @@ module.exports = function (obj , callback){
     }
 
 
-    var postData = JSON.stringify(
+    var postData = encodeURIComponent(JSON.stringify(
         {
             "infile":  JSON.stringify(obj.data),
             "callback":obj.executed,
@@ -71,7 +71,7 @@ module.exports = function (obj , callback){
             "scale" : obj.scale || "1",
             "globaloptions" :  JSON.stringify(globaloptions)
         }
-    );
+    ));
 
     var post = http.request({
         hostname: '127.0.0.1',
