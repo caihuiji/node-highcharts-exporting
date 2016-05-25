@@ -79,7 +79,7 @@ module.exports = function (obj , callback){
         path: '/',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
             'Content-Length': postData.length
         }
     } , function (res){
