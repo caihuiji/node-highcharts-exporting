@@ -61,7 +61,7 @@ module.exports = function (obj , callback){
     }
 
 
-    var postData = encodeURIComponent(JSON.stringify(
+    var postData = JSON.stringify(
         {
             "infile":  JSON.stringify(obj.data),
             "callback":obj.executed,
@@ -71,7 +71,7 @@ module.exports = function (obj , callback){
             "scale" : obj.scale || "1",
             "globaloptions" :  JSON.stringify(globaloptions)
         }
-    ));
+    );
 
     var post = http.request({
         hostname: '127.0.0.1',
@@ -80,7 +80,7 @@ module.exports = function (obj , callback){
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-            'Content-Length': postData.length
+            'Content-Length': Buffer.byteLength(postData,'utf8')
         }
     } , function (res){
 
