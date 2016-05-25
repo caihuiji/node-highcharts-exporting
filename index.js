@@ -79,8 +79,8 @@ module.exports = function (obj , callback){
         path: '/',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Content-Length': postData.length
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+            'Content-Length': Buffer.byteLength(postData,'utf8')
         }
     } , function (res){
 
