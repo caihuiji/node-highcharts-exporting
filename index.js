@@ -15,7 +15,7 @@ var childArgs = [
     '-host', '127.0.0.1' ,'-port', '8787'
 ]
 
-var childProcess = childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+var childProcess = childProcess.execFile(binPath, childArgs, {maxBuffer:1024*500},function(err, stdout, stderr) {
     if(err){
         throw err;
     }
