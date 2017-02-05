@@ -15,6 +15,10 @@ var childArgs = [
     '-host', '127.0.0.1' ,'-port', '8787'
 ]
 
+if(!binPath){
+    throw new Error("can no found phantomjs , see https://github.com/BetterJS/badjs-web/issues/23")
+}
+
 var childProcess = childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
     if(err){
         throw err;
@@ -26,6 +30,10 @@ var defaultExecuted = function(chart) {  chart.renderer.arc(0).add();}
 
 
 process.on('exit' , function() {
+    childProcess.kill();
+})
+
+process.on('disconnect' , function() {
     childProcess.kill();
 })
 
