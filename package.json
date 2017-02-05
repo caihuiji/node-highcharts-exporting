@@ -1,10 +1,10 @@
 {
   "name": "node-highcharts-exporting",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "easy to use  highcharts exporting by phantomjs",
   "main": "index.js",
   "dependencies": {
-    "phantomjs": "^1.9.17"
+    "phantomjs": "^1.9.18"
   },
   "homepage": "https://github.com/caihuiji/node-highcharts-exporting",
   "repository": {

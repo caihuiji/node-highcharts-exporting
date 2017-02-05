@@ -13,8 +13,8 @@ exporting({
     },
 
     options : {
-        title : {text : "test"} ,
-        "yAxis" : {"title" : {"text": "test" }}
+        title : {text : "test ≤‚ ‘"} ,
+        "yAxis" : {"title" : {"text": "test ≤‚ ‘" }}
     }
 
 
